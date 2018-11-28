@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PES.Data\PES.Data.csproj">
+      <Project>{846c7be8-2b81-45f9-a78f-9d436e5f3394}</Project>
+      <Name>PES.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PES.Models\PES.Models.csproj">
+      <Project>{ef6ca8a4-eacd-4bda-ae03-9eac84a4bc00}</Project>
+      <Name>PES.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
