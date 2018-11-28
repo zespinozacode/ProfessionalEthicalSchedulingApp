@@ -201,7 +201,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -281,6 +280,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PES.Data\PES.Data.csproj">
+      <Project>{846c7be8-2b81-45f9-a78f-9d436e5f3394}</Project>
+      <Name>PES.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PES.Models\PES.Models.csproj">
+      <Project>{ef6ca8a4-eacd-4bda-ae03-9eac84a4bc00}</Project>
+      <Name>PES.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PES.Services\PES.Services.csproj">
+      <Project>{9f3070cb-0c59-467e-a973-45c4f201de25}</Project>
+      <Name>PES.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

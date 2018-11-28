@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using PES.Data;
 using PES.WebMVC.Models;
 
 namespace PES.WebMVC
