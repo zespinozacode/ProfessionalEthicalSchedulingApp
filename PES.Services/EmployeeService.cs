@@ -51,7 +51,8 @@ namespace PES.Services
                                 {
                                     EmployeeId = e.EmployeeId,
                                     Name = e.Name,
-                                    WageAmount = e.WageAmount
+                                    WageAmount = e.WageAmount,
+                                    Rating = e.Rating
                                 }
                         );
                 return query.ToArray();
@@ -92,8 +93,26 @@ namespace PES.Services
                 entity.EmployeeId = model.EmployeeId;
                 entity.Name = model.Name;
                 entity.WageAmount = model.WageAmount;
+                entity.CanClose = model.CanClose;
+                entity.CanOpen = model.CanOpen;
+                entity.AvailableHours = model.AvailableHours;
+                entity.Rating = model.Rating;
 
                 return ctx.SaveChanges() == 1; 
+            }
+        }
+
+        public bool DeleteEmployee(int employeeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Employees
+                        .Single(e => e.EmployeeId == employeeId && e.ManagerId == _userId);
+                ctx.Employees.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

@@ -75,6 +75,8 @@ namespace PES.WebMVC.Controllers
                 new EmployeeEdit
                 {
                     EmployeeId = detail.EmployeeId,
+                    AvailableHours = detail.AvailableHours,
+                    Rating = detail.Rating,
                     Name = detail.Name,
                     WageAmount = detail.WageAmount
                 };
@@ -83,40 +85,52 @@ namespace PES.WebMVC.Controllers
 
         // POST: Employee/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, EmployeeEdit model)
         {
-            try
-            {
-                // TODO: Add update logic here
+            if (!ModelState.IsValid) return View(model);
 
+            if(model.EmployeeId != id)
+            {
+                ModelState.AddModelError("", "Identification Mismatch");
+                return View(model);
+            }
+
+            var service = CreateEmployeeService();
+
+            if (service.UpdateEmployee(model))
+            {
+                TempData["SaveResult"] = "Employee updated!";
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            ModelState.AddModelError("", "Employee could not be updated");
+            return View(model);
         }
 
         // GET: Employee/Delete/5
+        [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            return View();
+            var svc = CreateEmployeeService();
+            var model = svc.GetEmployeeById(id);
+
+            return View(model);
         }
 
-        // POST: Employee/Delete/5
+        //POST: Employee/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            var service = CreateEmployeeService();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            service.DeleteEmployee(id);
+
+            TempData["SaveResult"] = "Employee Removed.";
+
+            return RedirectToAction("Index");
         }
     }
 }
