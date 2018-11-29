@@ -33,6 +33,8 @@ namespace PES.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<WeekData> WeekDatas  { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
