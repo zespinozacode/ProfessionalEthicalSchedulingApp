@@ -1,0 +1,35 @@
+﻿@model PES.Models.DayDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DayDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeekDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeekDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sales)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DayId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -54,14 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DayCreate.cs" />
+    <Compile Include="DayDetail.cs" />
+    <Compile Include="DayEdit.cs" />
+    <Compile Include="DayListItem.cs" />
     <Compile Include="EmployeeCreate.cs" />
     <Compile Include="EmployeeDetail.cs" />
     <Compile Include="EmployeeEdit.cs" />
     <Compile Include="EmployeeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WeekDataCreate.cs" />
-    <Compile Include="WeekDataEdit.cs" />
-    <Compile Include="WeekDataListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
