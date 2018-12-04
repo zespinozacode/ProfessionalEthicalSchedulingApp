@@ -81,6 +81,7 @@ namespace PES.Services
                         .Days
                         .Single(e => e.DayId == model.DayId && e.ManagerId == _userId);
 
+                entity.DayId = model.DayId;
                 entity.DayOfWeek = model.WeekDay;
                 entity.Sales = model.Sales;
 

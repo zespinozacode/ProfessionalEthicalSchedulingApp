@@ -77,8 +77,13 @@
     <Compile Include="Migrations\201811301502500_weekdatadeleted1.Designer.cs">
       <DependentUpon>201811301502500_weekdatadeleted1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812041855458_changedfloattodecimal.cs" />
+    <Compile Include="Migrations\201812041855458_changedfloattodecimal.Designer.cs">
+      <DependentUpon>201812041855458_changedfloattodecimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shift.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -99,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811301502500_weekdatadeleted1.resx">
       <DependentUpon>201811301502500_weekdatadeleted1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812041855458_changedfloattodecimal.resx">
+      <DependentUpon>201812041855458_changedfloattodecimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

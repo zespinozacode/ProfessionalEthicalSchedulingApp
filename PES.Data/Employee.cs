@@ -22,7 +22,7 @@ namespace PES.Data
         public string Name { get; set; }
 
         [Required]
-        public float WageAmount { get; set; }
+        public decimal WageAmount { get; set; }
 
         [Required]
         public float Rating { get; set; }

@@ -10,6 +10,6 @@ namespace PES.Models
     {
         public int DayId { get; set; }
         public DayOfWeek WeekDay { get; set; }
-        public float Sales { get; set; }
+        public decimal Sales { get; set; }
     }
 }

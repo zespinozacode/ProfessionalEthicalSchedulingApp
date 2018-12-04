@@ -14,7 +14,7 @@ namespace PES.Models
         public string Name { get; set; }
 
         [Display(Name="Wage")]
-        public float WageAmount { get; set; }
+        public decimal WageAmount { get; set; }
 
         public float Rating { get; set; }
 

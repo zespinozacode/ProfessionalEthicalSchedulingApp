@@ -12,7 +12,7 @@ namespace PES.Models
         [Required]
         public string Name { get; set; }
         public int AvailableHours { get; set; }
-        public float WageAmount { get; set; }
+        public decimal WageAmount { get; set; }
         public float Rating { get; set; }
         public bool CanOpen { get; set; }
         public bool CanClose { get; set; }
